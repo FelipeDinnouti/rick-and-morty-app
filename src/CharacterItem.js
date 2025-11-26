@@ -3,18 +3,19 @@ import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
 const kWindowWidth = Dimensions.get('window').width;
 
 function colorFromStatus(status) {
-    let res = '#000'
-    if (status === 'Alive') {
-        res =  '#323645'
-    } else if (status === 'Dead') {
-        res = '#e13b36'
+    var res = "#fff"
+    if (status === "Alive") {
+        res =  "#3fbf6b"
+    } else if (status === "Dead") {
+        res = "#cc352d"
     } 
 
     return {
         height: 8,
         width: 8,
         borderRadius: 8,
-        backgroundColor: res
+        backgroundColor: res,
+        marginRight: 6
     }
 }
 
@@ -25,9 +26,11 @@ const CharacterItem = ({image, name, status, species}) => (
             <Image source={{ uri: image }} style={styles.image}/>
         </View> 
         <View style={styles.text_container}>
-            <View style={colorFromStatus(status)}></View>
             <Text style={styles.item_title}>{name}</Text>
-            <Text style={styles.item_subtitle}>{status} - {species}</Text> 
+            <View style={styles.status_container}>
+                <View style={colorFromStatus(status)}></View>
+                <Text style={styles.item_subtitle}>{status} - {species}</Text> 
+            </View>
         </View>
     </View>
 );
@@ -68,6 +71,11 @@ const styles = StyleSheet.create({
         display: 'flex',
         flex: 1,
         paddingHorizontal: 10
+    },
+    status_container: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
     },
     image_container: {
         flexDirection: 'row',
