@@ -11,3 +11,7 @@ And then run the code:
 ```bash
 npx expo start
 ```
+
+Explanation Video:
+
+https://drive.google.com/file/d/1neAnY6f4FfsjQgXYDYUM9LHJ2YjzZVnX/view?usp=sharing
