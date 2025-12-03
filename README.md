@@ -1,2 +1,13 @@
 # rick-and-morty-app
 An school assignment about implementing API consumption in mobile applications
+
+To run the project, download Expo-CLI globally:
+```bash
+npm install --global expo-cli
+```
+
+And then run the code:
+
+```bash
+npx expo start
+```
